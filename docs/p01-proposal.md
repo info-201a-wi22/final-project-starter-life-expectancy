@@ -16,7 +16,7 @@ February 4th, Winter 2022
 Our main question is how outside factors from the economic situation and health can affect the life expectancy in certain questions, which will be addressed by the social and health data gathered from countries globally. We are concerned with this topic because we have prior knowledge of how more underdeveloped countries had shorter life expectancies due to health crises and wanted to find out what other major factors impact the average life expectancy of a country. Considering that some factors and events target certain countries more than others, it is important to limit this effect by focusing on global factors that affect most countries' populations.
 
 ### Keywords
-global :globe_with_meridians: ; life expectancy :chart_with_upwards_trend: ; health :hospital: ; GDP :dollar: ; education :pencil:
+:chart_with_upwards_trend: life expectancy; :globe_with_meridians: global; :hospital: health; :dollar: GDP; :pencil: education
 
 ### Introduction
 Our project aims at uncovering data of the global life expectancy of humans. Before we dive deeper into understanding life expectancy, in short, life expectancy is the measure of how many years a person is expected to live. In our project we hope to analyze four main factors that could affect life expectancy of a population such as immunization, GDP, substance usage, and education. The data used observes these factors globally with 15 years of recorded data corresponding to each country listed. These four factors are being analyzed because while they are broad, these factors are seen on a global level and mostly affect whole populations. This way, our data can hopefully pinpoint which factors are more prevalent in determining life expectancy and can later become a focus for research with more specific issues within the topic.
@@ -41,7 +41,7 @@ The direct stakeholders are researchers, health care providers, governments, adv
 - Global life expectancy data and especially visual data ensures we are aware of humans' health over the course of their life span. This world map for example shows life expectancy data as recent of 2019 and the number of years an individual would live specific to each country.
 
 - Visually seeing data can help people learn, interpret, and discuss data (Roser, Ortiz-Ospina, & Ritchie, 2013).
-![Our World in Data Global Life Expectancy Map, 2019](images/life-expectancy-map.png)
+![Our World in Data Global Life Expectancy Map, 2019](../images/life-expectancy-map.png)
 
 ##### _Harms:_
 - Stereotyping is a potential harm because countries following behind in life expectancy may have a negative connotation surrounding their peoples, governments, and way of life.
@@ -86,7 +86,7 @@ Factors like healthcare, GDP, education, and substance abuse may play an importa
 
 ### Limitations
 
-Limitations from the data stem from outside factors that could affect life expectancy, such as car accidents, could sway the data. Because of this, the correlations may not be completely accurate, however, by using various categories and data for the major factors that affect whole populations, this limitation is mitigated. Additionally, policies from different countries may heavily affect the data. For example, vaccine mandates and alcohol laws could contribute to the data observed, but it would be too difficult to know and research each countries' policies concerning this and later find out how those policies impact the issue at hand. There is missing data from smaller countries which increases the limitations from the dataset, as well as the fact that the data is gathered from 2000-2015. Because the data is not up-to-date and does not include the pandemic which certainly impacted many deaths worldwide, important factors like economic status and policies and their heightened impact cannot be observed.
+Limitations from the data stem from outside factors that could affect life expectancy, such as car accidents, could sway the data. Because of this, the correlations may not be completely accurate, however, by using various categories and data for the major factors that affect whole populations, this limitation is mitigated. Additionally, policies from different countries may heavily affect the data. For example, vaccine mandates and alcohol laws could contribute to the data observed, but it would be too difficult to know and research each countries' policies concerning this and later find out how those policies impact the issue at hand. There is missing data from smaller countries which increases the limitations from the dataset, as well as the fact that the data is gathered from 2000 to 2015. Because the data is not up-to-date and does not include the pandemic which certainly impacted many deaths worldwide, important factors like economic status and policies and their heightened impact cannot be observed.
 
 #### Acknowledgements
 
