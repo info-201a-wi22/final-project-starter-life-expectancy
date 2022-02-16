@@ -1,5 +1,6 @@
 # INFO 201 AH
-# Project Pt 2
+# P02: Exploratory Analysis
+
 # Vaccinations vs. Infant Mortality Rate:
 # Density Chart
 
