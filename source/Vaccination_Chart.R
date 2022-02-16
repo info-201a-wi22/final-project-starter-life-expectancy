@@ -21,11 +21,10 @@ vaccinations_data <- life_expectancy %>%
             infant.deaths = mean(infant.deaths))
 
 # Density Comparison Chart
-vaccinations <- ggplot(vaccinations_data) +
+ggplot(vaccinations_data) +
   geom_density(aes(x = Hepatitis.B, fill = "HepB_Coverage"), alpha = 0.5) +
   geom_density(aes(x = infant.deaths, fill = "Infant_Mortality"), alpha = 0.5) +
   labs(title = "Hepatitis B Immunization Coverage vs. Infant Mortality Rates", 
        x = "Population Percentage", y = "Density", fill = "Data Type") +
   xlim(0, 100)
 
-print(vaccinations)
