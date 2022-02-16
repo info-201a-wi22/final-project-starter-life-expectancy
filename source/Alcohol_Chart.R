@@ -4,8 +4,8 @@
 # Scatterplot 
 
 #Loading Packages 
-#library(ggplot2)
-#library(tindyverse)
+library(ggplot2)
+library(tindyverse)
 
 #set working directory 
 setwd("~/info201_code/final-project-starter-life-expectancy/source")
