@@ -1,4 +1,5 @@
-# INFO 201: Project Pt 2
+# INFO 201 AH
+# Project Pt 2
 # Vaccinations vs. Infant Mortality Rate:
 # Density Chart
 
