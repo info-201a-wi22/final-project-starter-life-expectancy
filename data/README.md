@@ -6,7 +6,7 @@ In our project, we use the following data files and Application Programming Inte
 |Data File Name | Brief Description|
 |---------------| -----------------|
 |[example.cvs](./example.csv) | This file contains temperature data. (See report for details.)
-|[Life_Expectancy_Data.csv](./Life_Expectancy_Data)| This file contains data on life expectancy around the world. (See project proposal report for more details.)
+|[LifeExpectancyData.csv](./LifeExpectancyData.csv)| This file contains data on life expectancy around the world. (See project proposal report for more details.)
 
 
 ### Application Programming Interfaces (API) (TODO: Update/delete)
