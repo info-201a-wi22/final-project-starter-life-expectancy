@@ -11,20 +11,6 @@ knitr::opts_chunk$set(echo = FALSE)
 source("../source/Education_Chart.R")
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-```{r}
-source("../source/Vaccination_Chart.R")
-```
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-```{r}
-source("../source/GDP_against_Expectancy.R")
-```
 
 ### Summary Information
 
@@ -41,16 +27,8 @@ plot(education_plot)
 We chose to use a scatterplot to compare the number of schooling years and life expectancy across the world to showcase the correlation whether it be a negative or positive correlation. As a result of the scatterplot, you can see the x-axis being schooling and y-axis being life expectancy, and the blue dots representing the data. As one can see in the chart there is a high positive correlation between life expectancy and years of schooling throughout the world. For example for years of schooling above 10 years, the average life expectancy of a person is higher compared to years of schooling for 5 years. For each year add of schooling and gaining an education the life expectancy increases. 
 
 ### Chart 2 
-```{r pressure, echo=FALSE}
-plot(vaccination_plot)
-```
 
 ### Chart 3 
-```{r pressure, echo=FALSE}
-plot(maplife)
-```
+
 
 ### Chart 4
-```{r pressure, echo=FALSE}
-plot(mapgdp)
-```
