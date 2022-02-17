@@ -16,7 +16,8 @@ life_expectancy <- read.csv("LifeExpectancyData.csv")
 #view data
 #view(life_expectancy)
 #Scatterplot
-ggplot(data = life_expectancy) +
+education_plot <- ggplot(data = life_expectancy) +
   geom_point(mapping = aes(x = Schooling , y = Life.expectancy), color = "blue") +
-  labs(title = "Amount of Years of Schooling Versus Life Expectancy")
+  labs(title = "Amount of Years of Schooling Versus Life Expectancy")  
+
 
