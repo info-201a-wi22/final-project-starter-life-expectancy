@@ -12,14 +12,15 @@ source("summary_info.R")
 sum_table <- data.frame(summary_info)
 
 # Select relevant columns
-sum_table <- sum_table[, c("country", "vaccination_percentage", "total_vaccination_hep",
+sum_table <- sum_table[, c("country", "expectancy", "vaccination_percentage", "total_vaccination_hep",
                            "vaccine_ratio", "health_expenditure", "education_ratio")]
 
 
 # Group all data from the same country into the average of the different years
 sum_table <- sum_table %>%
   group_by(country) %>%
-  summarize(vaccination_percentage = mean(vaccination_percentage, na.rm = TRUE), 
+  summarize(expectancy = mean(expectancy, na.rm = TRUE),
+            vaccination_percentage = mean(vaccination_percentage, na.rm = TRUE), 
             total_vaccination_hep = mean(total_vaccination_hep, na.rm = TRUE), 
             vaccine_ratio = mean(vaccine_ratio, na.rm = TRUE), 
             health_expenditure = mean(health_expenditure, na.rm = TRUE), 
@@ -42,6 +43,7 @@ sum_table <- sum_table %>%
 # Rename column names
 sum_table <- sum_table %>%
   rename("Country" = country, 
+         "Life Expectancy" = expectancy,
          "Average Vaccination Percentage" = vaccination_percentage, 
          "Total Hepatitis B Vaccinations" = total_vaccination_hep, 
          "Vaccine and Infant Mortality Ratio" = vaccine_ratio, 

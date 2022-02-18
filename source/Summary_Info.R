@@ -10,7 +10,15 @@ life_expectancy <- read.csv("https://raw.githubusercontent.com/info-201a-wi22/fi
 
 # Create list of summary information
 summary_info <- list()
+
+
+# Each country's name
 summary_info$country <- life_expectancy$Country
+
+
+# Life expectancy for each country
+summary_info$expectancy <- life_expectancy$Life.expectancy
+
 
 # Working with Vaccination
 
