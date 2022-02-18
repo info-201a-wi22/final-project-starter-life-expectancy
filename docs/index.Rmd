@@ -4,10 +4,10 @@ author: "Grant Branstetter, Kayla Tounalom, Ysabelle Lara Olairez, Lizeth Velder
 date: "2/16/2022"
 output: html_document
 ---
-```{r setup, include=FALSE, warning = FALSE, echo=FALSE}
+```{r setup, include=FALSE, warning = FALSE, echo=FALSE, message=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-```{r, echo=FALSE, warning=FALSE}
+```{r,  include=FALSE, warning = FALSE, echo=FALSE, message=FALSE}
 library(ggplot2)
 #library(tidyverse)
 library(dplyr)
@@ -20,20 +20,19 @@ source("../source/GDP_against_Expectancy.R")
 source("../source/Summary_Table.R")
 
 ```
-### Comments 
-We are not sure how to get rid of those errors worked with a TA and he was not able to figure it out as well.
 
 ### Summary Information
+The summary information calculated incorporates the different questions we are focusing on when describing the global life expectancy and its factors. We calculated each of the total vaccinations of a country's population for Hepatitis B, Polio, and Diphtheria. The average percentage of the vaccinations of the total population was also calculated, along with the ratio of the vaccination percentage and infant mortality. Then, when considering the GDP of each country, we calculated the health expenditure in USD. Also, the calculation for the percentage between years of school and overall life expectancy was found. These values either help set up information or clearly show the relation between the respective factors and life expectancy.
 
 
 ### Summary Table 
-```{r echo=FALSE, warning = FALSE}
+```{r echo=FALSE, warning = FALSE, message=FALSE}
 kable(sum_table)%>%
-  kable_styling("striped", full_width = FALSE)
+  kable_styling("striped", full_width = FALSE, html_font = "Cambria")
 
 ```
 ### Chart 1
-```{r pressure, echo=FALSE, warning = FALSE}
+```{r pressure, echo=FALSE, warning = FALSE,  message=FALSE}
 plot(education_plot)
 ```
 
@@ -41,23 +40,21 @@ plot(education_plot)
 We chose to use a scatterplot to compare the number of schooling years and life expectancy across the world to showcase the correlation whether it be a negative or positive correlation. As a result of the scatterplot, you can see the x-axis being schooling and y-axis being life expectancy, and the blue dots representing the data. As one can see in the chart there is a high positive correlation between life expectancy and years of schooling throughout the world. For example for years of schooling above 10 years, the average life expectancy of a person is higher compared to years of schooling for 5 years. For each year add of schooling and gaining an education the life expectancy increases. 
 
 ### Chart 2 
-```{r echo=FALSE, warning = FALSE}
+```{r echo=FALSE, warning = FALSE,  message=FALSE}
 (vaccination_plot)
 ```
 
 To compare the vaccination coverage for Hepatitis B for one year olds and infant mortality rates, we used overlaying density charts. We choose this type of visualization because it was an easy way to visualize all the data for all the countries within the data set. These charts allow us to see how vaccination rates are able to affect life expectancies/infant mortality. From the chart, we can see that the density of Hepatitis B coverage is more populated on the upper end of the graph with a higher coverage. While with the infant mortality rates, the density is highly populated on the lower end, suggesting there are not much infant mortality. We can conclude that since most countries are able to cover the Hepatitis B vaccine for a good amount of their population, infant mortality rates decrease. 
-
  
 
 ### Chart 3 
-```{r echo=FALSE, warning = FALSE}
+```{r echo=FALSE, warning = FALSE,  message=FALSE}
 (mapgdp)
 ```
 
 ### Chart 4
-```{r echo=FALSE, warning = FALSE}
+```{r echo=FALSE, warning = FALSE,  message=FALSE}
 (maplife)
 ```
 
 We chose to use two graphs to compare GDP against life expectancy. The first graph visualizises gross domestic product values around the world, showing a global map. Lighter blue colors represent higher GDPs and darker blue shades represent lower. Our second graph is a global map of life expectancies, where lighter blue hues correlate with higher life expectancies. Our intent in using these two graphs is to display a clear visual example of the relationship between GDP and life expectancy. 
-
