@@ -1,11 +1,13 @@
-# INFO 201: Project Pt 2
-# Education and life expectancy 
-# Scatterplot 
+# INFO 201: AH 
+# P02: Exploratory Analysis 
+# Education and life expectancy Scatterplot 
 
 #Loading Packages 
 library(ggplot2)
-library(tidyverse)
+#library(tidyverse)
 library(lintr)
+
+library(ggiraph)
 #set working directory 
 setwd("~/info201_code/final-project-starter-life-expectancy/source")
 
@@ -14,9 +16,9 @@ life_expectancy <- read.csv("LifeExpectancyData.csv")
 
 #view data
 #view(life_expectancy)
-#Scatterplot
-ggplot(data = life_expectancy) +
-  geom_point(mapping = aes(x = Schooling , y = Life.expectancy), color = "blue") +
-labs(title = "Amount of Years of Schooling Versus Life Expectancy")
 
- 
+#Scatterplot
+education_plot <- ggplot(data = life_expectancy) +
+  geom_point(mapping = aes(x = Schooling , y = Life.expectancy), color = "blue") +
+  labs(title = "Amount of Years of Schooling Versus Life Expectancy")  
+

@@ -1,16 +1,11 @@
 # INFO 201 AH
 # P02: Exploratory Analysis
-
 # Vaccinations vs. Infant Mortality Rate:
 # Density Chart
 
 # Loading Packages 
-library(ggplot2)
-library(tidyverse)
-library(dplyr)
 
 # Set working directory 
-setwd("~/Documents/Info201code/final-project-starter-life-expectancy/source")
 
 # Load data from csv file
 life_expectancy <- read.csv("./LifeExpectancyData.csv")
