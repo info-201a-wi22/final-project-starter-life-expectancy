@@ -7,8 +7,8 @@ as follows:
 
 |Report | Brief Description|
 |---------------| -----------------|
-|[Project Proposal (FIX ME!)](./xxx) | A brief description of your P1:Project Proposal
-|[Exploratory Data Analysis](./xxx) | A brief description of your exploratory data analyis report
+|[Project Proposal](./p01-proposal.md) | Our P1:Project Proposal that does over our project topic (life expectancy), our data set, and more
+|[Exploratory Data Analysis](./index.html) | A deeper and more concentrated insight to our project proposal questions, along with data visualizations.
 |[Interactive Vizualizaiton](./xxx) | A brief description of your final report. 
 
 
