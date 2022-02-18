@@ -32,12 +32,12 @@ INFO-201: Technical Foundations of Informatics - The Information School - Univer
 ##### Date:
 February 16th, Winter 2022
 
-##### Key Words:
-life expectancy; global; health; GDP; education
-
 
 ### Abstract
 Our main question is how outside factors from the economic situation and health can affect the life expectancy in certain questions, which will be addressed by the social and health data gathered from countries globally. We are concerned with this topic because we have prior knowledge of how more underdeveloped countries had shorter life expectancies due to health crises and wanted to find out what other major factors impact the average life expectancy of a country. Considering that some factors and events target certain countries more than others, it is important to limit this effect by focusing on global factors that affect most countries' populations.
+
+### Key Words
+life expectancy; global; health; GDP; education
 
 ### Introduction
 Our project aims at uncovering data of the global life expectancy of humans. Before we dive deeper into understanding life expectancy, in short, life expectancy is the measure of how many years a person is expected to live. In our project we hope to analyze four main factors that could affect life expectancy of a population such as immunization, GDP, and education. The data used observes these factors globally with 15 years of recorded data corresponding to each country listed. These three factors are being analyzed because while they are broad, these factors are seen on a global level and mostly affect whole populations. This way, our data can hopefully pinpoint which factors are more prevalent in determining life expectancy and can later become a focus for research with more specific issues within the topic.
@@ -100,6 +100,19 @@ Factors like healthcare, GDP, education, and substance abuse may play an importa
 
 ### Limitations
 Limitations from the data stem from outside factors that could affect life expectancy, such as car accidents, could sway the data. Because of this, the correlations may not be completely accurate, however, by using various categories and data for the major factors that affect whole populations, this limitation is mitigated. Additionally, policies from different countries may heavily affect the data. For example, vaccine mandates and alcohol laws could contribute to the data observed, but it would be too difficult to know and research each countries' policies concerning this and later find out how those policies impact the issue at hand. There is missing data from smaller countries which increases the limitations from the dataset, as well as the fact that the data is gathered from 2000 to 2015. Because the data is not up-to-date and does not include the pandemic which certainly impacted many deaths worldwide, important factors like economic status and policies and their heightened impact cannot be observed.
+
+#### References
+Centers for Disease Control and Prevention. (2021, October 13). NVSS - life expectancy. Centers for Disease Control and Prevention. Retrieved February 4, 2022, from https://www.cdc.gov/nchs/nvss/life-expectancy.htm
+
+Gibson, J., & Olivia, S. (2020). Direct and Indirect Effects of Covid-19 On Life Expectancy and Poverty in Indonesia. Bulletin of Indonesian Economic Studies, 56(3), 325–344. https://doi.org/10.1080/00074918.2020.1847244
+
+GBD 2015 Mortality and Causes of Death Collaborators (2016). Global, regional, and national life expectancy, all-cause mortality, and cause-specific mortality for 249 causes of death, 1980-2015: a systematic analysis for the Global Burden of Disease Study 2015. Lancet (London, England), 388(10053), 1459–1544. https://doi.org/10.1016/S0140-6736(16)31012-1
+
+Patterson, E. J. (2013). The Dose–Response of Time Served in Prison on Mortality: New York State, 1989–2003. American Journal of Public Health, 103(3), 523–528. https://doi.org/10.2105/ajph.2012.301148
+
+Rajarshi, Kumar (2018). Life Expectancy (WHO): Statistical Analysis on factors influencing Life Expectancy. Kaggle. https://www.kaggle.com/kumarajarshi/life-expectancy-who
+
+Roser, M., Ortiz-Ospina, E., & Ritchie, H. (2013). Life Expectancy. Our World in Data. https://ourworldindata.org/life-expectancy
 
 ### Summary Information
 The summary information calculated incorporates the different questions we are focusing on when describing the global life expectancy and its factors. We calculated each of the total vaccinations of a country's population for Hepatitis B, Polio, and Diphtheria. The average percentage of the vaccinations of the total population was also calculated, along with the ratio of the vaccination percentage and infant mortality. Then, when considering the GDP of each country, we calculated the health expenditure in USD. Also, the calculation for the percentage between years of school and overall life expectancy was found. These values either help set up information or clearly show the relation between the respective factors and life expectancy.
