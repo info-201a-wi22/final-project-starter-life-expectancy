@@ -3,7 +3,7 @@
 # Summary Information Table
 
 # Load packages
-library("dplyr")
+#library("dplyr")
 
 # Source the summary information
 source("summary_info.R")
@@ -41,10 +41,10 @@ sum_table <- sum_table %>%
 
 # Rename column names
 sum_table <- sum_table %>%
-  rename("Country" = country, 
-         "Average Vaccination Percentage" = vaccination_percentage, 
-         "Total Hepatitis B Vaccinations" = total_vaccination_hep, 
-         "Vaccine and Infant Mortality Ratio" = vaccine_ratio, 
-         "Expenditure on Health from GDP in USD" = health_expenditure, 
-         "Percentage of Schooling Years vs Life Expectancy" = education_ratio)
+ rename("Country" = country, 
+        "Vaccination Percentage" = vaccination_percentage,
+        "Total Hepatitis B Vaccinations" = total_vaccination_hep, 
+       "Vaccine and Infant Mortality Ratio" = vaccine_ratio, 
+      "Expenditure on Health from GDP in USD" = health_expenditure, 
+      "Percentage of Schooling Years vs Life Expectancy" = education_ratio)
 

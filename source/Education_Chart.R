@@ -4,9 +4,10 @@
 
 #Loading Packages 
 library(ggplot2)
-library(tidyverse)
+#library(tidyverse)
 library(lintr)
 
+library(ggiraph)
 #set working directory 
 setwd("~/info201_code/final-project-starter-life-expectancy/source")
 
@@ -15,9 +16,9 @@ life_expectancy <- read.csv("LifeExpectancyData.csv")
 
 #view data
 #view(life_expectancy)
+
 #Scatterplot
 education_plot <- ggplot(data = life_expectancy) +
   geom_point(mapping = aes(x = Schooling , y = Life.expectancy), color = "blue") +
   labs(title = "Amount of Years of Schooling Versus Life Expectancy")  
-
 
