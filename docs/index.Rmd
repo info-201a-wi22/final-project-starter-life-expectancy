@@ -24,11 +24,12 @@ source("../source/Summary_Table.R")
 
 ```
 
+### update writing -KT
 ### Abstract
 Our main question is how outside factors from the economic situation and health can affect the life expectancy in certain questions, which will be addressed by the social and health data gathered from countries globally. We are concerned with this topic because we have prior knowledge of how more underdeveloped countries had shorter life expectancies due to health crises and wanted to find out what other major factors impact the average life expectancy of a country. Considering that some factors and events target certain countries more than others, it is important to limit this effect by focusing on global factors that affect most countries' populations.
 
 ### Introduction
-Our project aims at uncovering data of the global life expectancy of humans. Before we dive deeper into understanding life expectancy, in short, life expectancy is the measure of how many years a person is expected to live. In our project we hope to analyze four main factors that could affect life expectancy of a population such as immunization, GDP, substance usage, and education. The data used observes these factors globally with 15 years of recorded data corresponding to each country listed. These four factors are being analyzed because while they are broad, these factors are seen on a global level and mostly affect whole populations. This way, our data can hopefully pinpoint which factors are more prevalent in determining life expectancy and can later become a focus for research with more specific issues within the topic.
+Our project aims at uncovering data of the global life expectancy of humans. Before we dive deeper into understanding life expectancy, in short, life expectancy is the measure of how many years a person is expected to live. In our project we hope to analyze four main factors that could affect life expectancy of a population such as immunization, GDP, and education. The data used observes these factors globally with 15 years of recorded data corresponding to each country listed. These three factors are being analyzed because while they are broad, these factors are seen on a global level and mostly affect whole populations. This way, our data can hopefully pinpoint which factors are more prevalent in determining life expectancy and can later become a focus for research with more specific issues within the topic.
 
 ### Design Situation
 **Project framing:**
@@ -65,9 +66,6 @@ Countries vary in their ability to provide immunizations due to many factors suc
 
 #### Is the level of schooling worldwide related to life expectancy?
 Educational levels and opportunities to obtain an education varies between different populations, we want to know how this effects life expectancy worldwide and what educational resources do people need to survive.
-
-#### Is there a correlation between alcohol usage by nation and life expectancy?
-Observing alcohol consumption to see the correlation with life expectancy is important because of how common it is and the numerous health concerns that may arise from its abuse. Therefore, the amount of alcohol consumed by different societies and their drinking culture can be a major factor towards life expectancy and should be analyzed.
 
 #### Is there a correlation between the incomes and economic outputs of countries and their respective life expectancies?
 The development index of certain nations can be indicative of their health expenditures, access to medical resources, and availability of essential resources. It is important to understand whether these factors play a role in life expectancy to address critical public health issues worldwide.
