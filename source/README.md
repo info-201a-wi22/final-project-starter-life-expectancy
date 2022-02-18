@@ -5,8 +5,12 @@ these sub-directories (TODO: Update/Delete)
 
 |Source Directories | Brief Description|
 |---------------| -----------------|
-|[xxx](./xxx) | Description ... 
-|[xxx](./xxx) | Description ... 
+|[Education Chart](./Education_Chart.R) | Scatterplot visualization between life expectancy and schooling.
+|[Vaccination Chart](./Vaccination_Chart.R) | Density chart visualization between HepB vaccinations and infant mortality rates.
+|[GDP Chart](./GDP_against_Expectancy.R) | Map visualizations between life expectancy and GDP.
+|[Life Expectancy Data](./LifeExpectanctData.csv) | Original data table for life expectancy.
+|[Summary Info](./Summary_Info.R) | Calculates values within the data to help answer our questions.
+|[Summary Table](./Summary_Table.R) | An aggregated table focusing on values to answer our questions.
 
 
 
