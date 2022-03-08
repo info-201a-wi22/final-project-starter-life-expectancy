@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Quicksand&display=swap');
+
+.navbar-static-top {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  font-family: 'Oxygen', sans-serif;
+}
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h3 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}
+
+title {
+  font-family: 'Quicksand', sans-serif;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+a {
+  color: #8b95c9;
+}
+
+a:visited {
+  color: #BF877E;
+  
+}
+
+a:hover {
+  color: #8db996;
+}
+
+hr {
+  height: 1px;
+  background-color: #dfd7ca;
+  border: none;
+}
+
+img {
+  max-width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
