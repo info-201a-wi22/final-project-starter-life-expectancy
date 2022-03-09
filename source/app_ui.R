@@ -1,5 +1,6 @@
 # shiny app ui
 
+# Load packages
 library("shiny")
 library("shinythemes")
 library(tidyverse)
@@ -7,11 +8,13 @@ library(ggplot2)
 library(maps)
 library(plotly)
 
+# Introduction page with basis on life expectancy and images
 intro_page <- tabPanel(
   "Introduction",
   titlePanel(h1("Life Expectancy")),
   br(),
   sidebarLayout(
+    # Add images to sidebar
     sidebarPanel(
       img(src = "education.jpg"),
       img(src = "vaccine.png"),
@@ -34,8 +37,7 @@ intro_page <- tabPanel(
         that have to yet to surpass a life expectancy of 65 years in some developing countries."),
     
       br(),
-      
-      
+            
       h3("What is Being Specifically Answering?"),
       hr(),
       p("Through data collected by ", tags$a(href = "https://www.who.int/", "WHO"), ", which was then gathered into a dataset on ", 
@@ -65,25 +67,27 @@ intro_page <- tabPanel(
   ),
 )
 
-#Year slider and color input widget and explaination
-
+# Schooling tab with data visualization, summary, and widgets
 schooling_page <- tabPanel(
   "Education",
   titlePanel(h2("Years of Schooling and Life Expectancy")),
   br(),
   sidebarLayout(
     sidebarPanel(
+      # Color input widget
       selectInput(
         inputId = "color_input",
         label = h3("Graph Color"),
         choices = c("Red" = "#bf877e", "Blue" = "#8b95c9", "Green" = "#8DB996", 
                     "Purple" = "#7D5BA6", "Pink" = "#D65780", "Black" = "#3E3F3A"),
       ),
+      # Years slider widget
       sliderInput(
         inputId = "restrict",
         label = h3("Years Selected"), min = 1, max = 20, value = c(1, 20)
       ),
       
+      # Explanation of graph
       hr(),
       h3("Length Education Compared to Life Expectancy"),
       p("We chose to use a scatterplot to compare the number of schooling years and 
@@ -95,6 +99,7 @@ schooling_page <- tabPanel(
         by using the slider widget to see the change in years of schooling and see
         the decrease or increase in life expectancy.")
     ),
+    # Data visualization output
     mainPanel(
       h3("Amount of Years of Schooling vs. Life Expectancy"),
       plotlyOutput(outputId = "education_output")
@@ -103,13 +108,14 @@ schooling_page <- tabPanel(
   ),
 )
 
-
+# Vaccination tab with data visualization
 vaccine_page <- tabPanel(
   "Vaccinations",
   titlePanel(h2("Vaccinations and Life Expectancy")),
   br(),
   sidebarLayout(
     sidebarPanel(
+      # Type of vaccination selection widget
       selectInput("vaccine", label = h3("Select Vaccination"), 
                   choices = list("Hepatitis B" = "Hepatitis.B",
                                  "Polio" = "Polio", 
@@ -117,6 +123,7 @@ vaccine_page <- tabPanel(
                   selected = "Hepatitis B"),
       
       hr(),
+      # Data visualization explanation
       h3("Different Vaccinations with Infant Mortality"),
       p("To compare the vaccination coverage for the chosen vaccine for one year olds 
         and infant mortality rates, we used overlaying density charts. The different
@@ -130,22 +137,25 @@ vaccine_page <- tabPanel(
         mortality rates decrease.")
     ),
     mainPanel(
+      # Plot output
       h3("Average Immunization Coverage vs. Infant Mortality Rates"),
       plotlyOutput("vaccination_plot")
     ),
   ),
 )
 
-
+# GDP tab with data visualization
 gdp_page <- tabPanel(
   "GDP",
   titlePanel(h2("Countries' GDP and Life Expectancy")),
   br(),
   sidebarLayout(
+    # Year slider widget
     sidebarPanel(
       sliderInput("slider1", label = h3("Year"), min = 2000, 
                   max = 2015, value = 2015),
       hr(),
+      # Data visualization explanation
       h3("Global Life Expectancy"),
       p("This is a visualization of global life expectancies since 2000. 
         Adjusting the slider to the year desired visualizes the data. As 
@@ -156,17 +166,17 @@ gdp_page <- tabPanel(
         Hovering over each nation provides detailed information for each 
         year and can illustrate this pattern effectively."),
     ),
-    
-    
     mainPanel(
       h3("Global Life Expectancies Since 2000"), 
       br(),
+      # Map output
       plotlyOutput(outputId = "maplife"),
       
     ),
   ),
 )
 
+# Page containing all data visualization tabs
 visualization_page <- tabPanel(
   "Visualizations",
   titlePanel(h1("Data Visualizations")),
@@ -178,6 +188,7 @@ visualization_page <- tabPanel(
   )
 )
 
+# Page containing full report
 report_page <- tabPanel(
   "Report",
   titlePanel(h1("How Global Factors Affect A Country's Life Expectancy")),
@@ -467,7 +478,7 @@ report_page <- tabPanel(
   ),
 )
 
-
+# Conclusion page with takeaways
 conclusion_page <- tabPanel(
   "Summary",
   titlePanel(h1("Our Takeaways")),
@@ -514,7 +525,7 @@ conclusion_page <- tabPanel(
               the US population as well.")
 )
 
-
+# References and acknowledgements page with extra links
 resources_page <- tabPanel(
   "Resources",
   titlePanel(h1("References and Acknowledgements")),
@@ -555,6 +566,7 @@ resources_page <- tabPanel(
   p(tags$a(href = "https://www.who.int/", "World Health Organization (WHO)")),
   )
 
+# Navigation page containing all pages
 nav_page <- navbarPage(
   "Life Expectancy Factors",
   intro_page,
@@ -564,6 +576,7 @@ nav_page <- navbarPage(
   resources_page
 )
 
+# Ui page, setting the theme and adding CSS
 ui <- fluidPage(includeCSS("styles.css"), theme = shinytheme("sandstone"),
   tags$head(
     tags$style(HTML("")),
