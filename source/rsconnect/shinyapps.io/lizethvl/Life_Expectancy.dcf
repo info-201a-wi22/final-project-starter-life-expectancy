@@ -1,0 +1,14 @@
+name: Life_Expectancy
+title: Life_Expectancy
+username:
+account: lizethvl
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5811090
+bundleId: 5659229
+url: https://lizethvl.shinyapps.io/Life_Expectancy/
+when: 1646794313.19012
+lastSyncTime: 1646794313.19012
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|data_access.R|Education_Chart.R|GDP_against_Expectancy.R|LifeExpectancyData.csv|README.md|Summary_Info.R|Summary_Table.R|Vaccination_Chart.R

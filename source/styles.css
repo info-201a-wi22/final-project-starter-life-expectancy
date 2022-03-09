@@ -23,6 +23,19 @@ h3 {
 h4 {
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+h5{
+  color: #987284;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+p {
+  margin-right: 30px;
+  margin-left: 10px;
 }
 
 title {
@@ -31,6 +44,8 @@ title {
 
 ul {
   list-style-type: circle;
+  margin-right: 30px;
+  margin-left: 10px;
 }
 
 a {
@@ -57,4 +72,8 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+label {
+  font-family: 'Oxygen', sans-serif;
 }

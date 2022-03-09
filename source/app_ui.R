@@ -2,10 +2,15 @@
 
 library("shiny")
 library("shinythemes")
+library(tidyverse)
+library(ggplot2)
+library(maps)
+library(plotly)
 
 intro_page <- tabPanel(
   "Introduction",
   titlePanel(h1("Life Expectancy")),
+  br(),
   sidebarLayout(
     sidebarPanel(
       img(src = "education.jpg"),
@@ -57,33 +62,123 @@ intro_page <- tabPanel(
         made about what and how these factors impact life expectancy, instead of pinning it
         mainly on personal health and diet."),
     ),
-  )
+  ),
 )
 
+schooling_page <- tabPanel(
+  "Education",
+  titlePanel(h2("Years of Schooling and Life Expectancy")),
+  br(),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(
+        inputId = "color_input",
+        label = h3("Graph Color"),
+        choices = c("Red" = "#bf877e", "Blue" = "#8b95c9", "Green" = "#8DB996", 
+                    "Purple" = "#7D5BA6", "Pink" = "#D65780", "Black" = "#3E3F3A"),
+      ),
+      sliderInput(
+        inputId = "restrict",
+        label = h3("Years Selected"), min = 1, max = 20, value = c(1, 20)
+      ),
+      
+      hr(),
+      h3("About the Plot"),
+      p("We chose to use a scatterplot to compare the number of schooling years and 
+        life expectancy across the world to showcase the correlation whether it be a
+        negative or positive correlation. As a result of the scatterplot, you can 
+        see the x-axis being schooling and y-axis being life expectancy, and the dots
+        representing the data. For each year add of schooling and gaining an education
+        the life expectancy increases. Users will be able to interact with the chart 
+        but using the slider widget to see the change in years of schooling and see
+        the decrease or increase in life expectancy.")
+    ),
+    mainPanel(
+      h3("Amount of Years of Schooling vs. Life Expectancy"),
+      plotlyOutput(outputId = "education_output")
+      
+    ),
+  ),
+)
+
+
+vaccine_page <- tabPanel(
+  "Vaccinations",
+  titlePanel(h2("Vaccinations and Life Expectancy")),
+  br(),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("vaccine", label = h3("Select vaccination"), 
+                  choices = list("Hepatitis B" = "Hepatitis.B",
+                                 "Polio" = "Polio", 
+                                 "Diphtheria" = "Diphtheria"),
+                  selected = "Hepatitis B"),
+      
+      hr(),
+      h3("About the Plot"),
+      p("To compare the vaccination coverage for the chosen vaccine for one year olds 
+        and infant mortality rates, we used overlaying density charts. The different
+        vaccines to choose from are Hepatits B, Polio, and Diphtheria. We choose this
+        type of visualization because it was an easy way to visualize all the data for 
+        all the countries within the data set. These charts allow us to see how 
+        vaccination rates are able to affect life expectancies/infant mortality. From
+        the chart, we can see that the trends of density for vaccine coverage vs. 
+        infant mortality rates. We can conclude that since most countries are able to
+        cover the vaccine for infants for a good amount of their population, infant 
+        mortality rates decrease.")
+    ),
+    mainPanel(
+      h3("Average Immunization Coverage vs. Infant Mortality Rates"),
+      plotlyOutput("vaccination_plot")
+    ),
+  ),
+)
+
+
+gdp_page <- tabPanel(
+  "GDP",
+  titlePanel(h2("Countries' GDP and Life Expectancy")),
+  br(),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("slider1", label = h3("Year"), min = 2000, 
+                  max = 2015, value = 2015),
+      hr(),
+      h3("About the Plot"),
+      p("This is a visualization of global life expectancies since 2000. 
+        Adjusting the slider to the year desired visualizes the data. As 
+        life expectancy was not significantly altered worldwide between 
+        2000 and 2015, it is important to note that the color changes are 
+        subtle in the chart. It is possible overall to see a general 
+        overall increase in life expectancy between 2000 and 2015. 
+        Hovering over each nation provides detailed information for each 
+        year and can illustrate this pattern effectively."),
+    ),
+    
+    mainPanel(
+      h3("Global Life Expectancies Since 2000"), 
+      br(),
+      plotlyOutput(outputId = "maplife"),
+      
+    ),
+  ),
+)
+
+visualization_page <- tabPanel(
+  "Visualizations",
+  titlePanel(h1("Data Visualizations")),
+  br(),
+  tabsetPanel(
+    schooling_page,
+    vaccine_page,
+    gdp_page
+  )
+)
 
 report_page <- tabPanel(
   "Report",
   titlePanel(h1("About Life Expectancy")),
   br(),
-  tags$head(
-    tags$style(HTML("
-      p {
-        margin-right: 30px;
-        margin-left: 10px;
-      }
-      hr {
-        margin-right: 30px;
-        margin-left: 10px;
-      }
-      h4 {
-        margin-right: 30px;
-        margin-left: 10px;
-      }
-      ul {
-        margin-right: 30px;
-        margin-left: 10px;
-      }")),
-  ),
   sidebarLayout(
     sidebarPanel(
       p(strong("Authors")),
@@ -272,49 +367,56 @@ report_page <- tabPanel(
          and their heightened impact cannot be observed."),
       br(),
     ),
-  )
+  ),
 )
 
-
-
-schooling_page <- tabPanel(
-  "Schooling",
-  titlePanel(h2("Years of Education and Life Expectancy"))
-)
-
-
-vaccine_page <- tabPanel(
-  "Vaccinations",
-  titlePanel(h2("Vaccinations and Life Expectancy"))
-)
-
-
-gdp_page <- tabPanel(
-  "GDP",
-  titlePanel(h2("Countries' GDP and Life Expectancy")),
-)
-
-visualization_page <- tabPanel(
-  "Visualizations",
-  titlePanel(h1("Data Visualizations")),
-  
-  br(),
-  tabsetPanel(
-    schooling_page,
-    vaccine_page,
-    gdp_page
-  )
-)
 
 conclusion_page <- tabPanel(
   "Summary",
-  titlePanel(h1("Conclusion"))
+  titlePanel(h1("Our Takeaways")),
+  br(),
+  h3("Education"),
+  p("The summary statistics for life expectancy and schooling consists of first 
+     finding the countries with the most and minimum number of years of schooling. 
+     What we found was the country with most number of schooling was", 
+     span(textOutput("high_schooling", inline = TRUE), style = "color:#D65780"), "The country with the lowest number of 
+     schooling years was", span(textOutput("low_schooling", inline = TRUE), style = "color:#D65780"), 
+    "The minimum average years of schooling in the world is", 
+    span(textOutput("min_schooling", inline = TRUE), style = "color:#D65780"), "and the 
+    maximum average years  of schooling in the world is", span(textOutput("max_schooling", inline = TRUE),
+                                                               style = "color:#D65780"),
+    ". We wanted to find the minimum and maximum for years of schooling and compare the countries to find a correlation."),
+
+  br(),
+  h3("Vaccinations"),
+  p("From the data set we are able to see summary statistics of averages for 
+    vaccination coverages and infant mortality rates around the world. Around the
+    world, the average percentage of vaccine coverage for 1 year old is",
+    span(textOutput("avg_vaccine_coverage", inline = TRUE), style = "color:#D65780"), "for vaccines such as
+    Hepatitis B, Polio, and Diphtheria. This relates to the average of", 
+    span(textOutput("avg_infant_deaths", inline = TRUE), style = "color:#D65780"), "infant deaths per 1000 
+    population. Since the average vaccine coverage is relatively high, the 
+    average infant mortality rates are low."),
+  br(),
+  h3("GDP"),
+  p("Hovering over each nation provides detailed information for each 
+    year and can illustrate this pattern effectively. In order to see
+    some general patterns pertinent to the United States, the years 
+    of maximum and minimum life expectancies were calculated, to see 
+    if the the trend toward increased life expectancy has been 
+    present here as well. The results follow:"),
+  p("Year with the lowest US life expectancy - ", span(textOutput("minlifeexpectancyus", inline = TRUE), style = "color:#D65780")),
+  p("Year with the highest US life expectancy - ", span(textOutput("maxlifeexpectancyus", inline = TRUE), style = "color:#D65780")),
+  p("Considering the data set for life expectancy ranges between the 
+              years of 2000 and 2015, it is clear that the trend is present in 
+              the US population as well.")
 )
 
 
 resources_page <- tabPanel(
   "Resources",
   titlePanel(h1("Resources")),
+  br(),
   h3("Works Cited"),
   hr(),
   p("Centers for Disease Control and Prevention. (2021, October 13). NVSS - life expectancy. 
@@ -342,7 +444,7 @@ resources_page <- tabPanel(
   
   p(tags$a(href = "https://github.com/info-201a-wi22/final-project-starter-life-expectancy",
            "GitHub Repository containing all project files")),
-  p(tags$a(href = "https://www.kaggle.com/kumarajarshi/life-expectancy-who", "Kaggle Dataset"))
+  p(tags$a(href = "https://www.kaggle.com/kumarajarshi/life-expectancy-who", "Kaggle Dataset")),
   )
 
 nav_page <- navbarPage(
@@ -360,4 +462,3 @@ ui <- fluidPage(includeCSS("styles.css"), theme = shinytheme("sandstone"),
     nav_page
   )
 )
-
