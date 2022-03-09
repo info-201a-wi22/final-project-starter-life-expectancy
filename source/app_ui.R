@@ -1,4 +1,4 @@
-# shiny app ui
+# Shiny app ui
 
 # Load packages
 library("shiny")
@@ -196,10 +196,23 @@ report_page <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       p(strong("Authors")),
-      p("Grant Branstetter:", em("gbrans@uw.edu")),
-      p("Ysabelle Olairez:", em("ylmo@uw.edu")),
-      p("Kayla Tounalom:", em("kaymtoun@uw.edu")),
-      p("Lizeth Velderrain-Lopez:", em("lizethvl@uw.edu")),
+      img(src = "group.png"),
+      br(),
+      
+      p("Grant Branstetter"),
+      span(p(em("gbrans@uw.edu / ", tags$a(href="https://www.linkedin.com/in/grantbranstetter/", "LinkedIn"), " / ",
+                tags$a(href="https://account.venmo.com/u/grantbranstetter", "Venmo")), style = "margin-left:30px")),
+      p("Ysabelle Olairez:"),
+      span(p(em("ylmo@uw.edu / ", tags$a(href="https://www.linkedin.com/in/ysabellelara/", "LinkedIn"), " / ",
+                tags$a(href="https://account.venmo.com/u/ysabellelara", "Venmo")), style = "margin-left:30px")),
+      p("Kayla Tounalom:"),
+      span(p(em("kaymtoun@uw.edu / ", tags$a(href="https://www.linkedin.com/in/kayla-tounalom", "LinkedIn"), " / ",
+                tags$a(href="https://account.venmo.com/u/kaylatoun", "Venmo")), style = "margin-left:30px")),
+      p("Lizeth Velderrain-Lopez:"),
+      span(p(em("lizethvl@uw.edu / ", tags$a(href="https://www.linkedin.com/in/lizethvl/", "LinkedIn"), " / ",
+                tags$a(href="https://account.venmo.com/u/lizethvelde", "Venmo")), style = "margin-left:30px")),
+      
+      br(),
       
       p(strong("Affiliation")),
       p("INFO-201: Technical Foundations of Informatics - ", 

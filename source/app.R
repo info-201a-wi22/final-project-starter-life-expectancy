@@ -1,14 +1,10 @@
-# app
+# App
 
 library("shiny")
 
-# Use source() to execute the `app_ui.R` and `app_server.R` files. These will
-# define the UI value and server function respectively.
+# Source ui and server
 source("app_ui.R")
 source("app_server.R")
 
-# You will need to fill in the `app_ui.R` file to create the layout.
-# Run the app through this file.
-
-# Create a new `shinyApp()` using the loaded `ui` and `server` variables
+# Create new shinyApp
 shinyApp(ui = ui, server = server)

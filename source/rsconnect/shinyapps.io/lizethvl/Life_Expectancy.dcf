@@ -5,10 +5,10 @@ account: lizethvl
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5811090
-bundleId: 5660072
+bundleId: 5663253
 url: https://lizethvl.shinyapps.io/Life_Expectancy/
-when: 1646811981.06434
-lastSyncTime: 1646811981.06434
+when: 1646855771.74553
+lastSyncTime: 1646855771.74553
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: .RData|data_access.R|Education_Chart.R|GDP_against_Expectancy.R|LifeExpectancyData.csv|README.md|Summary_Info.R|Summary_Table.R|Vaccination_Chart.R

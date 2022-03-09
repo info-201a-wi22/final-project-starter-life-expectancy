@@ -1,12 +1,9 @@
-# shiny server
+# Shiny server
+
 library("shiny")
 library(tidyverse)
 library(maps)
 library(ggplot2)
-# Create a shiny server that creates a scatterplot. 
-
-# It should use an `input` with features: `x_var`, `y_var`, `color`, and `size`
-# Save the result of `renderPlot` to output$scatter
 
 # Reads in raw data for csv
 life_expectancy <- read.csv("https://raw.githubusercontent.com/info-201a-wi22/final-project-starter-life-expectancy/main/data/LifeExpectancyData.csv")
@@ -66,7 +63,7 @@ server <- function(input, output) {
     # Get formatted
     life <- life_expectancy %>%
       select(Country, Life.expectancy, Year) 
-    #Get map data for the world 
+    # Get map data for the world 
     mapdata <- map_data("world") %>%
       rename(Country = region) 
     
@@ -76,13 +73,13 @@ server <- function(input, output) {
     mapdata$Country[ mapdata$Country == "UK" ] <- "United Kingdom of Great Britain and Northern Ireland"
     # gdp$Country[ gdp$Country == "United States of America"] <- "United States"
     life$Country[ life$Country == "United States of America"] <- "United States"
-    #combine life data frame with world data frame 
+    # Combine life data frame with world data frame 
     mapdatalife <- left_join(mapdata, life, by="Country")
 
     mapdatalife <- mapdatalife %>%
       filter(Year == input$slider1) 
       
-    #Create a map for life expectancy by country 
+    # Create a map for life expectancy by country 
     maplife <- ggplot(mapdatalife, aes(x = long, y = lat, group=group)) + 
       geom_polygon(aes(fill = Life.expectancy), color = "white") +
       scale_fill_continuous(limits = c(0, max(mapdatalife$Life.expectancy)), 
@@ -135,7 +132,7 @@ server <- function(input, output) {
     round(avg_infant_deaths)
   })
     
-  #Lowest Schooling Years
+  # Lowest Schooling Years
   output$min_schooling <- renderText({
     min_schooling <- life_expectancy %>%
       select(Country, Life.expectancy, Year, Schooling) %>%
@@ -146,7 +143,7 @@ server <- function(input, output) {
     return(min_schooling)
   })
   
-  # highest schooling years 
+  # Highest schooling years 
   output$max_schooling <- renderText({
     max_schooling <- life_expectancy %>%
       select(Country, Life.expectancy, Year, Schooling) %>%
@@ -157,7 +154,7 @@ server <- function(input, output) {
     return(max_schooling)
   })
   
-  #Country with highest schoolings years
+  # Country with highest schoolings years
   output$high_schooling <- renderText({
     high_country_schooling <- life_expectancy %>%
       select(Country, Life.expectancy, Year, Schooling) %>%
@@ -168,7 +165,7 @@ server <- function(input, output) {
     return(high_country_schooling)
   })
   
-  #Country with lowest schooling years
+  # Country with lowest schooling years
   output$low_schooling <- renderText({
     low_country_schooling <- life_expectancy %>%
       select(Country, Life.expectancy, Year, Schooling) %>%
@@ -178,7 +175,4 @@ server <- function(input, output) {
       pull(Country)
     return(low_country_schooling)
   })
-  
-    
-    
 }
