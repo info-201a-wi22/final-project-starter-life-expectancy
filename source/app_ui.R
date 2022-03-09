@@ -65,6 +65,8 @@ intro_page <- tabPanel(
   ),
 )
 
+#Year slider and color input widget and explaination
+
 schooling_page <- tabPanel(
   "Education",
   titlePanel(h2("Years of Schooling and Life Expectancy")),
