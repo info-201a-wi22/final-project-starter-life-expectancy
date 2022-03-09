@@ -88,9 +88,9 @@ schooling_page <- tabPanel(
         life expectancy across the world to showcase the correlation whether it be a
         negative or positive correlation. As a result of the scatterplot, you can 
         see the x-axis being schooling and y-axis being life expectancy, and the dots
-        representing the data. For each year add of schooling and gaining an education
+        representing the data. For each year added of schooling and education gained
         the life expectancy increases. Users will be able to interact with the chart 
-        but using the slider widget to see the change in years of schooling and see
+        by using the slider widget to see the change in years of schooling and see
         the decrease or increase in life expectancy.")
     ),
     mainPanel(
