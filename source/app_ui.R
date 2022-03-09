@@ -214,12 +214,12 @@ report_page <- tabPanel(
       br(),
       
       h3("Research Questions"),
-      p(em(strong("Is the level of schooling worldwide related to life expectancy?"))),
+      p(em(strong("Is there an association between immunization coverage and life expectancy in the nations surveyed?"))),
       p("Countries vary in their ability to provide immunizations due to many factors
         such as cost, their location, laws, etc. It is important to recognize how a 
         country's ability or inability to get these resources affect their overall health."),
       
-      p(em(strong("Is there an association between immunization coverage and life expectancy in the nations surveyed?"))),
+      p(em(strong("Is the level of schooling worldwide related to life expectancy?"))),
       p("Educational levels and opportunities to obtain an education varies between 
         different populations, we want to know how this effects life expectancy worldwide
         and what educational resources do people need to survive."),
