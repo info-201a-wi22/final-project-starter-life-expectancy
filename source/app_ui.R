@@ -83,7 +83,7 @@ schooling_page <- tabPanel(
       ),
       
       hr(),
-      h3("About the Plot"),
+      h3("Length Education Compared to Life Expectancy"),
       p("We chose to use a scatterplot to compare the number of schooling years and 
         life expectancy across the world to showcase the correlation whether it be a
         negative or positive correlation. As a result of the scatterplot, you can 
@@ -108,14 +108,14 @@ vaccine_page <- tabPanel(
   br(),
   sidebarLayout(
     sidebarPanel(
-      selectInput("vaccine", label = h3("Select vaccination"), 
+      selectInput("vaccine", label = h3("Select Vaccination"), 
                   choices = list("Hepatitis B" = "Hepatitis.B",
                                  "Polio" = "Polio", 
                                  "Diphtheria" = "Diphtheria"),
                   selected = "Hepatitis B"),
       
       hr(),
-      h3("About the Plot"),
+      h3("Different Vaccinations with Infant Mortality"),
       p("To compare the vaccination coverage for the chosen vaccine for one year olds 
         and infant mortality rates, we used overlaying density charts. The different
         vaccines to choose from are Hepatits B, Polio, and Diphtheria. We choose this
@@ -144,7 +144,7 @@ gdp_page <- tabPanel(
       sliderInput("slider1", label = h3("Year"), min = 2000, 
                   max = 2015, value = 2015),
       hr(),
-      h3("About the Plot"),
+      h3("Global Life Expectancy"),
       p("This is a visualization of global life expectancies since 2000. 
         Adjusting the slider to the year desired visualizes the data. As 
         life expectancy was not significantly altered worldwide between 
@@ -154,6 +154,7 @@ gdp_page <- tabPanel(
         Hovering over each nation provides detailed information for each 
         year and can illustrate this pattern effectively."),
     ),
+    
     
     mainPanel(
       h3("Global Life Expectancies Since 2000"), 
@@ -177,7 +178,7 @@ visualization_page <- tabPanel(
 
 report_page <- tabPanel(
   "Report",
-  titlePanel(h1("About Life Expectancy")),
+  titlePanel(h1("How Global Factors Affect A Country's Life Expectancy")),
   br(),
   sidebarLayout(
     sidebarPanel(
@@ -230,6 +231,38 @@ report_page <- tabPanel(
         resources. It is important to understand whether these factors play a role 
         in life expectancy to address critical public health issues worldwide."),
       
+      br(),
+      
+      h3("Expected Implications"),
+      p("Factors like healthcare, GDP, education, and substance abuse may play an important
+        role in the average life expectancies of nations worldwide. Since life expectancy
+        is tied to these certain conditions, the implications are clear to policymakers 
+        and others that in order to improve quality of life around the world, the root 
+        issues facing countries with lagging life expectancies need to be addressed. 
+        Countries that have particularly high life expectancies might be models for 
+        addressing issues in the United States and in other places as well. Considering 
+        many of the nations in the data with the highest life expectancies have different 
+        healthcare systems, greater expenditures on schooling, and healthier average lifestyles,
+        it might be important to adopt the policies that work for them. Technologists, 
+        designers, and policymakers are all involved in this effort to improve worldwide 
+        health, because of their potential ability to improve the systems we have."),
+      
+      br(),
+      
+      h3("Limitations"),
+      p("Limitations from the data stem from outside factors that could affect life expectancy,
+         such as car accidents, could sway the data. Because of this, the correlations
+         may not be completely accurate, however, by using various categories and data
+         for the major factors that affect whole populations, this limitation is mitigated.
+         Additionally, policies from different countries may heavily affect the data. 
+         For example, vaccine mandates and alcohol laws could contribute to the data observed,
+         but it would be too difficult to know and research each countries' policies
+         concerning this and later find out how those policies impact the issue at hand. 
+         There is missing data from smaller countries which increases the limitations 
+         from the dataset, as well as the fact that the data is gathered from 2000 to 2015. 
+         Because the data is not up-to-date and does not include the pandemic which certainly 
+         impacted many deaths worldwide, important factors like economic status and policies 
+         and their heightened impact cannot be observed."),
       br(),
     ),
     
@@ -333,38 +366,100 @@ report_page <- tabPanel(
       
       br(),
       
-      h3("Expected Implications"),
+      h3("Findings"),
       hr(),
-      p("Factors like healthcare, GDP, education, and substance abuse may play an important
-        role in the average life expectancies of nations worldwide. Since life expectancy
-        is tied to these certain conditions, the implications are clear to policymakers 
-        and others that in order to improve quality of life around the world, the root 
-        issues facing countries with lagging life expectancies need to be addressed. 
-        Countries that have particularly high life expectancies might be models for 
-        addressing issues in the United States and in other places as well. Considering 
-        many of the nations in the data with the highest life expectancies have different 
-        healthcare systems, greater expenditures on schooling, and healthier average lifestyles,
-        it might be important to adopt the policies that work for them. Technologists, 
-        designers, and policymakers are all involved in this effort to improve worldwide 
-        health, because of their potential ability to improve the systems we have."),
+      h4("Is the level of schooling worldwide related to life expectancy?"),
+      p("Educational levels and opportunities to obtain an education varies between different
+        populations, we want to know how this effects life expectancy worldwide and what 
+        educational resources do people need to survive. The level of schooling worldwide 
+        is related to life expectancy because based on the plots on the graph there is a 
+        high positive correlation between life expectancy and years of schooling 
+        throughout the world. As the years of schooling increases the life expectancy
+        of a person in the world increases. For years of schooling above 5 years, the average 
+        life expectancy of an individual is longer. This high correlation can mean that countries
+        with more resources for education have a higher life expectancy and countries with fewer
+        educational resources have a lower life expectancy. Factors such as living conditions. 
+        GDP, government policies, and much more can affect if people have access to education."),
+      
+      h4("Is there an association between immunization coverage and life expectancy in the nations surveyed?"),
+      p("Countries vary in their ability to provide immunizations due to many factors such as 
+        cost, their location, laws, etc. It is important to recognize how a country's ability
+        or inability to get these resources affect their overall health. We observed
+        this in the Vaccination Coverage Vs. Infant Mortality density charts. For the vaccine 
+        coverage for all three vaccines (Hepatitis B, Polio, and Diphtheria) are mostly above
+        the 50% or more which means that most countries around the world are able to provide 
+        vaccines to their infants. While the life expectancy is highly concentrated on the 
+        lower percentiles, meaning that the average infant deaths per country are relatively
+        low.This means that as vaccination coverage increases, so does the life expectancy 
+        for infants. As vaccines help us fight against different viruses, they allow us to
+        stay healthier and live longer."),
+      
+      h4("Is there a correlation between the incomes and economic outputs of countries
+         and their respective life expectancies?"),
+      p("There appears to be some relationship between the economic outputs of countries
+        and their respective life expectancies. The high gross domestic product signals
+        higher levels of wealth, a factor that may coincide with better access to healthcare,
+        safer environments, and a disproportionate availability of resources. GDP may also
+        be related to a nation's life expectancy because lower fertility rates are associated
+        with higher GDP, leading to a larger return on human capital, in turn boosting
+        gross domestic output."),
+      p("It was observed that the nations with very high economic output, namely the 
+        United States,  China, Japan, and Germany, also had relatively long life expectancies.
+        In contrast, nations with lower economic growth like Eritrea, Yemen, and Afghanistan
+        tended to have shorter life expectancies."),
       
       br(),
       
-      h3("Limitations"),
+      h3("Discussion"),
       hr(),
-      p("Limitations from the data stem from outside factors that could affect life expectancy,
-         such as car accidents, could sway the data. Because of this, the correlations
-         may not be completely accurate, however, by using various categories and data
-         for the major factors that affect whole populations, this limitation is mitigated.
-         Additionally, policies from different countries may heavily affect the data. 
-         For example, vaccine mandates and alcohol laws could contribute to the data observed,
-         but it would be too difficult to know and research each countries' policies
-         concerning this and later find out how those policies impact the issue at hand. 
-         There is missing data from smaller countries which increases the limitations 
-         from the dataset, as well as the fact that the data is gathered from 2000 to 2015. 
-         Because the data is not up-to-date and does not include the pandemic which certainly 
-         impacted many deaths worldwide, important factors like economic status and policies 
-         and their heightened impact cannot be observed."),
+      p("The importance of our findings helps users understand the many implications
+        that contribute to life expectancy, especially in different regions in the world.
+        This can then be used to our advantage with research and policies towards increasing
+        life expectancy. Specifically, in our report, we touched on vaccination, schooling, and GDP."),
+      p("While reviewing the data about schooling years and life expectancy we saw a relation.
+        This is important because if people in the world have more schooling this could
+        lead to a pathway to financial stability, employment, and overall success.
+        What this shows is a correlation between schooling years to the financial
+        stability of an individual to the overall increase of life expectancy of 
+        people. Developing countries fall behind in average schooling years resulting
+        in lower life expectancy compared to countries that are developed. It is 
+        important to be aware of this so countries with lower average schooling years
+        can be provided with more resources or reform to increase schooling years to 
+        ensure a longer life expectancy for their people."),
+      p("Finding correlations between rates of vaccine coverage and infant mortality
+        are important in researching why a certain country's life expectancy is what
+        it is. Newborns and infants do not have the antibodies of a built up immune
+        system that are able to fight certain viruses and illnesses, making them more
+        susceptible to becoming sick or having worse symptoms. A country's ability
+        to provide these vaccines to these children can greatly affect their quality
+        of life as this ensures they are able to fight these diseases if needed.
+        The country's ability to provide and distribute these factors depend on a
+        variety of things such as money, transportation, etc. which may be difficult
+        for more developing countries. It is important to help these countries get
+        their population vaccinated as it will increase their life expectancy."),
+      p("We found that GDP and life expectancy are related. This information can
+        be important, as it implies the fact that populations in low economic output
+        nations have less access to essential resources and services, fewer resources,
+        and increased inequity. To increase GDP and thus life expectancies, it is 
+        important the economy be a global one, with governments playing a role in boosting
+        investment and trade being primarily open. Improving quality of life is essential,
+        and doing so will involve improving economic status worldwide."),
+      
+      br(),
+      
+      h3("Conclusion"),
+      hr(),
+      p("When thinking of life expectancy, we know a couple broad things about the subject,
+        including how it is affected by health and is seemingly increasing every year.
+        But through this research, we wanted to hone in more on some unexpected factors
+        that one wouldn't think of at first glance. Years of education, vaccinations
+        within the population, and GDP were factors that we wanted to not only see if
+        they carried an impact, but by what amount? When comparing these factors to
+        life expectancy, it was apparent that when each factor increased in value,
+        so did the corresponding life expectancy. Also, throughout the years, the
+        individual factors increased as well, contributing to the overall trend of
+        growth in life expectancy globally through time."),
+      br(),
       br(),
     ),
   ),
@@ -375,12 +470,14 @@ conclusion_page <- tabPanel(
   "Summary",
   titlePanel(h1("Our Takeaways")),
   br(),
-  h3("Education"),
+  h3("Correlation with Years of Education"),
+  hr(),
   p("The summary statistics for life expectancy and schooling consists of first 
      finding the countries with the most and minimum number of years of schooling. 
      What we found was the country with most number of schooling was", 
-     span(textOutput("high_schooling", inline = TRUE), style = "color:#D65780"), "The country with the lowest number of 
-     schooling years was", span(textOutput("low_schooling", inline = TRUE), style = "color:#D65780"), 
+     span(textOutput("high_schooling", inline = TRUE), style = "color:#D65780"), 
+    "The country with the lowest number of schooling years was", 
+    span(textOutput("low_schooling", inline = TRUE), style = "color:#D65780"), 
     "The minimum average years of schooling in the world is", 
     span(textOutput("min_schooling", inline = TRUE), style = "color:#D65780"), "and the 
     maximum average years  of schooling in the world is", span(textOutput("max_schooling", inline = TRUE),
@@ -388,7 +485,8 @@ conclusion_page <- tabPanel(
     ". We wanted to find the minimum and maximum for years of schooling and compare the countries to find a correlation."),
 
   br(),
-  h3("Vaccinations"),
+  h3("Vaccinations Within the Population"),
+  hr(),
   p("From the data set we are able to see summary statistics of averages for 
     vaccination coverages and infant mortality rates around the world. Around the
     world, the average percentage of vaccine coverage for 1 year old is",
@@ -398,15 +496,17 @@ conclusion_page <- tabPanel(
     population. Since the average vaccine coverage is relatively high, the 
     average infant mortality rates are low."),
   br(),
-  h3("GDP"),
-  p("Hovering over each nation provides detailed information for each 
-    year and can illustrate this pattern effectively. In order to see
+  h3("GDP Compared to Life Expectancy"),
+  hr(),
+  p("In order to see
     some general patterns pertinent to the United States, the years 
     of maximum and minimum life expectancies were calculated, to see 
     if the the trend toward increased life expectancy has been 
     present here as well. The results follow:"),
-  p("Year with the lowest US life expectancy - ", span(textOutput("minlifeexpectancyus", inline = TRUE), style = "color:#D65780")),
-  p("Year with the highest US life expectancy - ", span(textOutput("maxlifeexpectancyus", inline = TRUE), style = "color:#D65780")),
+  p("Year with the lowest US life expectancy - ", span(textOutput("minlifeexpectancyus",
+                                                                  inline = TRUE), style = "color:#D65780")),
+  p("Year with the highest US life expectancy - ", span(textOutput("maxlifeexpectancyus",
+                                                                   inline = TRUE), style = "color:#D65780")),
   p("Considering the data set for life expectancy ranges between the 
               years of 2000 and 2015, it is clear that the trend is present in 
               the US population as well.")
@@ -415,7 +515,7 @@ conclusion_page <- tabPanel(
 
 resources_page <- tabPanel(
   "Resources",
-  titlePanel(h1("Resources")),
+  titlePanel(h1("References and Acknowledgements")),
   br(),
   h3("Works Cited"),
   hr(),
@@ -439,12 +539,18 @@ resources_page <- tabPanel(
   
   br(),
   
+  h3("Acknowledgements"),
+  hr(),
+  p("Thank you to Kumar Rajarshi for collecting the data from WHO, making this project possible"),
+  p(tags$a(href = "https://www.kaggle.com/kumarajarshi/life-expectancy-who", "Kaggle Dataset")),
+  
+  br(),
+  
   h3("Links"),
   hr(),
-  
   p(tags$a(href = "https://github.com/info-201a-wi22/final-project-starter-life-expectancy",
            "GitHub Repository containing all project files")),
-  p(tags$a(href = "https://www.kaggle.com/kumarajarshi/life-expectancy-who", "Kaggle Dataset")),
+  p(tags$a(href = "https://www.who.int/", "World Health Organization (WHO)")),
   )
 
 nav_page <- navbarPage(
