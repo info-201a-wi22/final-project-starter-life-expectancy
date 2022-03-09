@@ -8,8 +8,10 @@ library(ggplot2)
 # It should use an `input` with features: `x_var`, `y_var`, `color`, and `size`
 # Save the result of `renderPlot` to output$scatter
 
+# Reads in raw data for csv
 life_expectancy <- read.csv("https://raw.githubusercontent.com/info-201a-wi22/final-project-starter-life-expectancy/main/data/LifeExpectancyData.csv")
 
+# Creates blank theme for map plot
 blank_theme <- theme_bw() +
   theme(
     axis.line = element_blank(),        
@@ -22,6 +24,7 @@ blank_theme <- theme_bw() +
     panel.border = element_blank()      
   )
 
+# Creates scatterplot of schooling and life expectancy
 server <- function(input, output) {
   output$education_output <- renderPlotly({
     education_plot <- ggplot(data = life_expectancy) +
@@ -34,6 +37,7 @@ server <- function(input, output) {
     return(education_plot)
   })
   
+  # Creates a overlaying density plot of the chosen vaccine and infant mortality
   output$vaccination_plot <- renderPlotly({
     vaccinations_data <- life_expectancy %>%
       select(Country, Hepatitis.B, Polio, Diphtheria, infant.deaths) %>%
@@ -53,7 +57,7 @@ server <- function(input, output) {
                                    "Diphtheria" = "#8DB996", "Infant Mortality" = "#8B95C9"))
   })
   
-
+# Creates map plot
   output$maplife <- renderPlotly({
     world_data <- ggplot2::map_data('world')
     world_data <- fortify(world_data)
@@ -91,6 +95,7 @@ server <- function(input, output) {
     input$slider1
   })
     
+  # Calculates min life expectancy
   output$minlifeexpectancyus <- renderText({
     minlifeexpectancyus <- life_expectancy %>%
       select(Country, Life.expectancy, Year) %>%
@@ -100,6 +105,7 @@ server <- function(input, output) {
     return(minlifeexpectancyus)
   })
   
+    # Calculates max life expectancy
   output$maxlifeexpectancyus <- renderText({
     maxlifeexpectancyus <- life_expectancy %>%
       select(Country, Life.expectancy, Year) %>%
@@ -108,7 +114,8 @@ server <- function(input, output) {
       pull(Year)
     return(maxlifeexpectancyus)
   })
-    
+   
+  # Calculates the average vaccine coverage around the world for 1-year olds
   output$avg_vaccine_coverage <- renderText({
     avg_vaccine_coverage <- life_expectancy %>%
       summarize(Hepatitis.B = mean(Hepatitis.B, na.rm = TRUE),
@@ -119,7 +126,8 @@ server <- function(input, output) {
       pull(vaccine_coverage)
     paste0(avg_vaccine_coverage, "%")
   })
-    
+  
+  # Calculates the average infant mortality around the world
   output$avg_infant_deaths <- renderText({
     avg_infant_deaths <- life_expectancy %>%
       summarize(infant.deaths = mean(infant.deaths, na.rm = TRUE)) %>%
